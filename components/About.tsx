@@ -54,7 +54,9 @@ const About: React.FC = () => {
             <p>
               I have a solid understanding of modern web technologies and
               front-end architecture, and I am continuously improving and
-              advancing my skills.
+              advancing my skills. I also have hands-on experience in UI/UX
+              design, creating clean, user-friendly interfaces and seamless user
+              experiences.
             </p>
           </motion.div>
 
