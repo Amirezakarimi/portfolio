@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <span>using React & Tailwind</span>
       </div>
       <p className="text-slate-600 text-xs mt-2">
-        © {new Date().getFullYear()} Arash. All rights reserved.
+        © {new Date().getFullYear()} Amirreza. All rights reserved.
       </p>
     </footer>
   );
