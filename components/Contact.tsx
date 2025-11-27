@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SectionId } from '../types';
 import { Send, Mail, Phone, MapPin, Loader2, Sparkles } from 'lucide-react';
-import { generateContactReply } from '../services/geminiService';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact: React.FC = () => {
@@ -18,24 +17,32 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setResponseMsg(null);
+  e.preventDefault();
+  setIsLoading(true);
+  setResponseMsg(null); // پاک کردن پیام قبلی
 
-    // Simulate network delay then call Gemini
-    try {
-        // In a real app, you'd send the email to your backend here.
-        // We are using Gemini to generate an immediate "AI Assistant" response.
-        const aiReply = await generateContactReply(formData.name, formData.message);
-        setResponseMsg(aiReply);
-        setFormData({ name: '', email: '', message: '' }); // Clear form
-    } catch (error) {
-        console.error(error);
-        setResponseMsg("An error occurred, please try again.");
-    } finally {
-        setIsLoading(false);
+  try {
+    const response = await fetch("https://formspree.io/f/movowlpb", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      setResponseMsg("Your message has been sent successfully! I’ll get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setResponseMsg("Failed to send message. Please try again later.");
     }
-  };
+  } catch (error) {
+    setResponseMsg("Something went wrong. Please try again later.");
+  }
+
+  setIsLoading(false);
+};
+
 
   return (
     <section id={SectionId.CONTACT} className="py-24 bg-gradient-to-b from-slate-900 to-slate-950">
@@ -49,13 +56,8 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-6">Get in Touch</h2>
-            <p className="text-slate-400 mb-12 leading-relaxed text-lg">
-              Have an interesting project in mind? Or just want to say hi?
-              <br />
-              I am always ready to hear new ideas and collaborate on challenging projects.
-            </p>
-
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-20">Contact</h2>
+            
             <div className="space-y-8">
               <div className="flex items-center gap-4 text-slate-300 hover:text-white transition-colors">
                 <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center">
@@ -63,7 +65,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Email</p>
-                  <p className="font-medium">contact@arash.dev</p>
+                  <p className="font-medium">contact@amirrezakarimi.ir</p>
                 </div>
               </div>
               
@@ -73,7 +75,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Phone</p>
-                  <p className="font-medium">+98 912 345 6789</p>
+                  <p className="font-medium">+98 911 554 4706</p>
                 </div>
               </div>
 
@@ -83,7 +85,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Location</p>
-                  <p className="font-medium">Tehran, Iran</p>
+                  <p className="font-medium">Sari, Tehran, Iran</p>
                 </div>
               </div>
             </div>
@@ -97,12 +99,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl relative overflow-hidden"
           >
-             {/* AI Badge */}
-             <div className="absolute top-4 right-4 flex items-center gap-1 bg-slate-800/50 px-2 py-1 rounded text-xs text-slate-400 border border-slate-700/50">
-                <Sparkles size={12} className="text-amber-400" />
-                <span>Smart Support</span>
-             </div>
-
+             
             <form onSubmit={handleSubmit} className="space-y-6 mt-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Your Name</label>
@@ -114,7 +111,6 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all"
-                  placeholder="Ex: John Doe"
                 />
               </div>
 
@@ -128,7 +124,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all"
-                  placeholder="john@example.com"
+                  placeholder="name@example.com"
                 />
               </div>
 
@@ -176,8 +172,6 @@ const Contact: React.FC = () => {
                   className="mt-6 p-4 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm overflow-hidden"
                 >
                   <div className="flex items-center gap-2 mb-2 text-slate-100 font-semibold">
-                     <Sparkles size={16} className="text-amber-400" />
-                     AI Assistant Reply:
                   </div>
                   <p>{responseMsg}</p>
                 </motion.div>
