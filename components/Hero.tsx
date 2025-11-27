@@ -63,10 +63,14 @@ const Hero: React.FC = () => {
             <ArrowDown size={18} />
           </button>
 
-          <button className="px-8 py-3 border border-slate-700 text-slate-300 rounded-full font-medium hover:border-slate-500 hover:text-white hover:bg-slate-800 transition-all duration-300 flex items-center gap-2">
+          <a
+            href="/files/Resume - Amirreza karimi.pdf"
+            download
+            className="px-8 py-3 border border-slate-700 text-slate-300 rounded-full font-medium hover:border-slate-500 hover:text-white hover:bg-slate-800 transition-all duration-300 flex items-center gap-2"
+          >
             <Download size={18} />
             Download CV
-          </button>
+          </a>
         </motion.div>
       </div>
 
