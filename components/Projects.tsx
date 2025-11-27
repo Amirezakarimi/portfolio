@@ -1,33 +1,55 @@
-import React from 'react';
-import { SectionId, ProjectItem } from '../types';
-import { Github, ExternalLink, Folder } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { SectionId, ProjectItem } from "../types";
+import { Github, ExternalLink, Folder } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects: ProjectItem[] = [
   {
     id: 1,
-    title: 'Crypto Dashboard',
-    description: 'A real-time cryptocurrency dashboard tracking prices, market cap, and trends. Features interactive charts and a personalized portfolio tracker.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Recharts', 'CoinGecko API'],
-    link: '#',
-    github: '#'
+    title: "Admin Dashboard",
+    description:
+      "Built a responsive React admin dashboard with intuitive user interfaces, efficient data management, and optimized performance for enhanced user experience.",
+    techStack: ["React", "React Router", "Material-UI", "Emotion", "Tailwind CSS", "Recharts"],
+    link: "#",
+    github: "https://github.com/Amirezakarimi/Dashboard",
+    image: "/public/image/Admin Dashboard.png",
   },
   {
     id: 2,
-    title: 'E-commerce Platform',
-    description: 'A fully functional online store with product filtering, cart management, and secure checkout integration.',
-    techStack: ['React', 'Redux Toolkit', 'Node.js', 'Stripe', 'MongoDB'],
-    link: '#',
-    github: '#'
+    title: "shiraz-moble",
+    description:
+      "Freelance Project: A web platform for renting fully-furnished homes in Shiraz, featuring a responsive design and easy booking.",
+    techStack: ["HTML", "CSS", "JavaScript", "Swiper"],
+    link: "#",
+    github: "https://github.com/Amirezakarimi/shiraz-moble",
+    image: "/public/image/shiraz-moble.png"
   },
   {
     id: 3,
-    title: 'Task Management App',
-    description: 'A drag-and-drop productivity tool similar to Trello. Supports multiple boards, dark mode, and local storage persistence.',
-    techStack: ['React', 'Dnd-kit', 'Zustand', 'Vite', 'Firebase'],
-    link: '#',
-    github: '#'
-  }
+    title: "arvand-web",
+    description:
+      "Developed a responsive corporate website using React, focusing on usability, mobile responsiveness, and performance optimization.",
+    techStack: [
+      "React",
+      "React Router",
+      "Framer Motion",
+      "jQuery",
+      "Tailwind CSS",
+    ],
+    link: "#",
+    github: "https://github.com/Amirezakarimi/arvand-web",
+    image: "/public/image/arvand-web.png",
+  },
+  {
+    id: 4,
+    title: "Home-appliance-store",
+    description:
+      '"An e-commerce platform for home appliances, offering a user-friendly interface, product browsing, and seamless online shopping experience."',
+    techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
+    link: "#",
+    github: "https://github.com/Amirezakarimi/Home-appliance-store",
+    image: "/public/image/Home-appliance-store.png",
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -35,17 +57,16 @@ const Projects: React.FC = () => {
     <section id={SectionId.PROJECTS} className="py-24 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Title */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+            Projects
+          </h2>
           <div className="w-20 h-1 bg-slate-700 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            A selection of projects that demonstrate my passion for building clean and performant web applications.
-          </p>
         </motion.div>
 
         {/* Projects Grid */}
@@ -61,8 +82,21 @@ const Projects: React.FC = () => {
             >
               {/* Visual Placeholder (Gradient) */}
               <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden group-hover:from-slate-800 group-hover:to-slate-800 transition-colors">
-                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors" />
-                 <Folder size={48} className="text-slate-700 group-hover:text-slate-500 transition-colors transform group-hover:scale-110 duration-500" />
+                {/* overlay */}
+                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors" />
+
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover group-hover:scale-110 transform transition-transform duration-500"
+                  />
+                ) : (
+                  <Folder
+                    size={48}
+                    className="text-slate-700 group-hover:text-slate-500 transition-colors transform group-hover:scale-110 duration-500"
+                  />
+                )}
               </div>
 
               {/* Content */}
@@ -73,12 +107,22 @@ const Projects: React.FC = () => {
                   </h3>
                   <div className="flex gap-3">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-white transition-colors">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-slate-500 hover:text-white transition-colors"
+                      >
                         <Github size={20} />
                       </a>
                     )}
                     {project.link && (
-                      <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-blue-400 transition-colors">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-slate-500 hover:text-blue-400 transition-colors"
+                      >
                         <ExternalLink size={20} />
                       </a>
                     )}
@@ -92,8 +136,8 @@ const Projects: React.FC = () => {
                 {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.techStack.map((tech) => (
-                    <span 
-                      key={tech} 
+                    <span
+                      key={tech}
                       className="px-3 py-1 bg-slate-900 border border-slate-800 rounded-full text-xs font-medium text-slate-400 group-hover:border-slate-700 transition-colors"
                     >
                       {tech}

@@ -8,8 +8,8 @@ export interface ExperienceItem {
 
 export interface SkillItem {
   name: string;
-  level: number; // 0 to 100
-  category: "Frontend" | "Backend" | "Tools";
+  level: number; 
+  category: "Frontend" | "Tools";
 }
 
 export interface ProjectItem {
@@ -19,6 +19,7 @@ export interface ProjectItem {
   techStack: string[];
   link?: string;
   github?: string;
+  image?: string;
 }
 
 export enum SectionId {
