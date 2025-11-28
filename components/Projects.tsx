@@ -12,7 +12,7 @@ const projects: ProjectItem[] = [
     techStack: ["React", "React Router", "Material-UI", "Emotion", "Tailwind CSS", "Recharts"],
     link: "#",
     github: "https://github.com/Amirezakarimi/Dashboard",
-    image: "/public/image/Admin Dashboard.png",
+    image: "/public/Image/Admin Dashboard.png",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const projects: ProjectItem[] = [
     techStack: ["HTML", "CSS", "JavaScript", "Swiper"],
     link: "#",
     github: "https://github.com/Amirezakarimi/shiraz-moble",
-    image: "/public/image/shiraz-moble.png"
+    image: "/public/Image/shiraz-moble.png"
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projects: ProjectItem[] = [
     ],
     link: "#",
     github: "https://github.com/Amirezakarimi/arvand-web",
-    image: "/public/image/arvand-web.png",
+    image: "/public/Image/arvand-web.png",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const projects: ProjectItem[] = [
     techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
     link: "#",
     github: "https://github.com/Amirezakarimi/Home-appliance-store",
-    image: "/public/image/Home-appliance-store.png",
+    image: "/public/Image/Home-appliance-store.png",
   },
 ];
 
