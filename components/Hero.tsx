@@ -28,6 +28,27 @@ const Hero: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto text-center space-y-8">
+        {/* Profile Picture */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex justify-center mb-6"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-100 to-slate-500 rounded-full blur-xl opacity-30 animate-pulse" />
+            <img
+              src="/Image/profile.jpg"
+              alt="Amirreza Karimi"
+              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-slate-700 shadow-2xl hover:border-slate-500 transition-all duration-300 pointer-events-none"
+              onError={(e) => {
+                // Fallback if image doesn't exist
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +62,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light"
+          className="text-xl md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light"
         >
           I'm <strong className="text-slate-200">Amirreza</strong>, a Frontend
           Developer.
@@ -53,7 +74,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center "
         >
           <button
             onClick={scrollToAbout}
@@ -75,14 +96,14 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ delay: 1, duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 text-slate-500"
+        className="relative bottom-58 text-slate-300"
       >
         <ArrowDown size={24} />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
