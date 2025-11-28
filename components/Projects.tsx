@@ -12,7 +12,7 @@ const projects: ProjectItem[] = [
     techStack: ["React", "React Router", "Material-UI", "Emotion", "Tailwind CSS", "Recharts"],
     link: "#",
     github: "https://github.com/Amirezakarimi/Dashboard",
-    image: "/public/Image/Admin Dashboard.png",
+    image: "/Image/Admin Dashboard.png",
   },
   {
     id: 2,
@@ -20,9 +20,9 @@ const projects: ProjectItem[] = [
     description:
       "Freelance Project: A web platform for renting fully-furnished homes in Shiraz, featuring a responsive design and easy booking.",
     techStack: ["HTML", "CSS", "JavaScript", "Swiper"],
-    link: "#",
+    link: "http://projects.amirrezakarimi.ir/ShirazMoble/",
     github: "https://github.com/Amirezakarimi/shiraz-moble",
-    image: "/public/Image/shiraz-moble.png"
+    image: "/Image/shiraz-moble.png"
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projects: ProjectItem[] = [
     ],
     link: "#",
     github: "https://github.com/Amirezakarimi/arvand-web",
-    image: "/public/Image/arvand-web.png",
+    image: "/Image/arvand-web.png",
   },
   {
     id: 4,
@@ -46,9 +46,9 @@ const projects: ProjectItem[] = [
     description:
       '"An e-commerce platform for home appliances, offering a user-friendly interface, product browsing, and seamless online shopping experience."',
     techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
-    link: "#",
+    link: "http://projects.amirrezakarimi.ir/HomeApplianceStore/",
     github: "https://github.com/Amirezakarimi/Home-appliance-store",
-    image: "/public/Image/Home-appliance-store.png",
+    image: "/Image/Home-appliance-store.png",
   },
 ];
 
