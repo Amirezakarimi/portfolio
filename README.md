@@ -1,7 +1,6 @@
 🌟 Personal Portfolio Website
 
-Welcome to my Personal Portfolio Website!
-This project is a modern, responsive web application built with React and TypeScript, showcasing my work, skills, and projects in a clean and interactive interface.
+Welcome to my Personal Portfolio Website! This project is a modern, responsive web application built with React and TypeScript, showcasing my work, skills, and projects in a clean and interactive interface.
 
 🚀 Features
 
@@ -18,5 +17,3 @@ SEO Friendly: Optimized with proper meta tags and fast loading performance.
 Frontend: React + TypeScript
 
 Styling: Tailwind CSS (or your preferred CSS framework)
-
-
