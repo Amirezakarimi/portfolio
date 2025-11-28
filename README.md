@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+🌟 Personal Portfolio Website
 
-# Run and deploy your AI Studio app
+Welcome to my Personal Portfolio Website!
+This project is a modern, responsive web application built with React and TypeScript, showcasing my work, skills, and projects in a clean and interactive interface.
 
-This contains everything you need to run your app locally.
+🚀 Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1C_K8QRrkzBip8Axop3Z1hfwyV5ZZ2zkH
+Responsive Design: Optimized for desktop, tablet, and mobile devices.
 
-## Run Locally
+Modern Tech Stack: Built with React and TypeScript for type safety and scalability.
 
-**Prerequisites:**  Node.js
+Portfolio Showcase: Display projects with live demos and detailed descriptions.
 
+Easy Deployment: Ready to deploy on Vercel, Netlify, or any static hosting.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+SEO Friendly: Optimized with proper meta tags and fast loading performance.
+
+🛠 Tech Stack
+
+Frontend: React + TypeScript
+
+Styling: Tailwind CSS (or your preferred CSS framework)
+
+Deployment: Vercel / Netlify / GitHub Pages
