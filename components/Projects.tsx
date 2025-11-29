@@ -10,7 +10,7 @@ const projects: ProjectItem[] = [
     description:
       "Built a responsive React admin dashboard with intuitive user interfaces, efficient data management, and optimized performance for enhanced user experience.",
     techStack: ["React", "React Router", "Material-UI", "Emotion", "Tailwind CSS", "Recharts"],
-    link: "#",
+    link: "http://projects.amirrezakarimi.ir/AdminDashboard/",
     github: "https://github.com/Amirezakarimi/Dashboard",
     image: "/Image/Admin Dashboard.png",
   },

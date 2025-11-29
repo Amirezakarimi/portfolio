@@ -7,12 +7,14 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+  import VPNWarning from './components/Ipcheck';
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-slate-200 selection:text-slate-900 overflow-x-hidden">
       <Header />
       <main>
+        {/* <VPNWarning /> */}
         <Hero />
         <About />
         <Skills />
